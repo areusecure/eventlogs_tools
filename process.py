@@ -2,7 +2,6 @@ import json
 import codecs
 import sys
 import datetime
-import pdb
 
 data=""
 
@@ -27,8 +26,8 @@ def main():
 		for key in doc.keys():
 			if type(doc[key])==str:
 				doc[key] = doc[key].strip()
-				if key == "Message":
-					doc[key]=doc[key][:doc[key].index("\r")]
+				#if key == "Message":
+				#	doc[key]=doc[key][:doc[key].index("\r")]
 
 		# Save epoch timestamp and create new comprehendable one
 		doc["TimeStamp"]=doc["TimeCreated"].replace("/Date(","").replace(")/","")
